@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/sensorData.css">
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/notifications.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!--====== Side Bar ======-->
+    <div id="nav-bar">
+      <input id="nav-toggle" type="checkbox" checked />
+      <div id="nav-header">
+        <a id="nav-title" href="#" target="_blank">Menu</a>
+        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+        <hr />
+      </div>
+      <div id="nav-content">
+        <a class="nav-button" href="home.html">
+          <i class="fas fa-home"></i><span>Home</span>
+        </a>
+        <a class="nav-button" href="dashboard.html">
+          <i class="fas fa-chart-line"></i><span>Dashboard</span>
+        </a>
+        <a class="nav-button" href="sensorData.html">
+          <i class="fas fa-microchip"></i><span>Sensor Data</span>
+        </a>
+        <a class="nav-button" href="reports.html">
+          <i class="fas fa-file-alt"></i><span>Reports</span>
+        </a>
+      </div>
+    </div>
+    <!--====== End of Side Bar ======-->
+    <!--====== Header ======-->
+    <header>
+      <nav>
+        <ul>
+          <ul class="test">
+            <li>
+              <a href="#" class="logo-text">Dashboard</a>
+            </li>
+          </ul>
+
+          <ul class="nav-date">
+            <li><a href="#about">24 April 2024</a></li>
+          </ul>
+
+          <ul class="account">
+            <li>
+              <i
+                class="fas fa-bell icon-style"
+                id="light-dark-toggle"
+                onclick="document.getElementById('id01').style.display='block'"
+              ></i>
+              <!-- ========== Notifications Modal =========== -->
+              <div id="id01" class="modal">
+                <span
+                  onclick="document.getElementById('id01').style.display='none'"
+                  class="close"
+                  title="Close Modal"
+                  >&times;</span
+                >
+
+                <!-- Modal Content -->
+                <div class="notifications">
+                  <h3 class="fas fa-bell">Notifications:</h3>
+                  <p>Notifcation 1 <button>Clear</button></p>
+                  <p>Notifcation 2 <button>Clear</button></p>
+                  <p>Notifcation 3 <button>Clear</button></p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i>
+            </li>
+            <li>
+              <i class="fas fa-user icon-style" id="user-dropdown-toggle"></i>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+      <hr class="top-line" />
+    </header>
+    <!--========= End of Header =========-->
+    <!--========= Main =========-->
+    <div class="main">
+      <div>
+        Detailed Sensor Data
+      </div>
+
+      <hr class="bottom-line" />
+      <div class="footer-text-dash">
+        <p>©️ 2024 Zimunda Estate. All rights reserved.</p>
+      </div>
+    </div>
+    <!--====== End of Main ======-->
+
+    <script src="./scripts/notifications.js"></script>
+  </body>
+</html>

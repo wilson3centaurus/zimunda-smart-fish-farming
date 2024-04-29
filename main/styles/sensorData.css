@@ -1,0 +1,26 @@
+.main {
+  font-family: Nova Round, "Open Sans", "Helvetica Neue";
+  margin-left: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.bottom-line {
+  margin: 0 auto;
+  border: 0;
+  height: 2px;
+  background-color: white;
+  width: 1000px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.footer-text-dash {
+  bottom: 0;
+  margin: 0 auto;
+  color: white;
+  margin-top: -90px;
+}
