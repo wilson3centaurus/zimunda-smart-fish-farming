@@ -14,10 +14,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/home.css" />
-    <link rel="stylesheet" href="styles/sensorData.css">
+    <link rel="stylesheet" href="styles/sensorData.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/notifications.css" />
-    <title>Dashboard</title>
+    <title>Sensor Data</title>
   </head>
   <body>
     <!--====== Side Bar ======-->
@@ -50,7 +50,7 @@
         <ul>
           <ul class="test">
             <li>
-              <a href="#" class="logo-text">Dashboard</a>
+              <a href="#" class="logo-text">Sensor Data</a>
             </li>
           </ul>
 
@@ -95,18 +95,25 @@
       <hr class="top-line" />
     </header>
     <!--========= End of Header =========-->
+    <p class="detailed">
+      Detailed temperature and pH data from the different sensors.
+    </p>
     <!--========= Main =========-->
     <div class="main">
-      <div>
-        Detailed Sensor Data
+      <div class="sensor1">
+        <h3 class="sensor-header">Temperature Sensor</h3>
+        <p>Sensor ID: E834LU8S</p>
       </div>
-
-      <hr class="bottom-line" />
-      <div class="footer-text-dash">
-        <p>©️ 2024 Zimunda Estate. All rights reserved.</p>
+      <div class="sensor2">
+        <h3 class="sensor-header">pH Sensor</h3>
+        <p>Sensor ID: W3I4LU8N</p>
       </div>
     </div>
     <!--====== End of Main ======-->
+    <hr class="bottom-line" />
+    <div class="footer-text-dash">
+      <p>©️ 2024 Zimunda Estate. All rights reserved.</p>
+    </div>
 
     <script src="./scripts/notifications.js"></script>
   </body>

@@ -1,5 +1,7 @@
-.main {
+* {
   font-family: Nova Round, "Open Sans", "Helvetica Neue";
+}
+.main {
   margin-left: 100px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -7,8 +9,31 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-
+.detailed {
+  margin: 0 auto;
+  color: #556779;
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.sensor1,
+.sensor2 {
+  background-color: hotpink;
+  width: 200px;
+  flex: 1;
+  padding: 20px;
+  margin: 5px;
+}
+.top-line {
+  margin: 0 auto;
+  border: 0;
+  height: 2px;
+  background-color: white;
+  width: 550px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
 .bottom-line {
   margin: 0 auto;
   border: 0;
@@ -23,4 +48,6 @@
   margin: 0 auto;
   color: white;
   margin-top: -90px;
+  display: flex;
+  justify-content: center;
 }
