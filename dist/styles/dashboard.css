@@ -25,9 +25,6 @@
   justify-content: center;
   border-radius: 7px;
 }
-.temp-container,
-.ph-container {
-}
 .timeseries-graph {
   flex: none;
   margin: 2px;
@@ -63,6 +60,8 @@
 }
 .table-view {
   width: 420px;
+  margin-top: -5px;
+  height: 230px;
 }
 .state,
 .uptime {
@@ -75,16 +74,6 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-}
-.state button {
-  border: none;
-  background-color: yellowgreen;
-  color: red;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 5px;
-  margin-top: 10px;
-  margin-left: 5px;
 }
 .project-image {
   width: 380px;
@@ -104,11 +93,12 @@
 }
 .recommendations {
   background-color: #111827;
-  width: 360px;
+  width: 350px;
   border-radius: 7px;
   overflow-y: auto;
   padding: 5px;
-  margin-top: 6px;
+  margin-top: -4px;
+  margin-bottom: 9px;
 }
 .top-line {
   margin: 0 auto;
