@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/dashboard.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!--====== Side Bar ======-->
+    <div id="nav-bar">
+      <input id="nav-toggle" type="checkbox" checked />
+      <div id="nav-header">
+        <a id="nav-title" href="#" target="_blank">Menu</a>
+        <label for="nav-toggle"><span id="nav-toggle-burger"></span></label>
+        <hr />
+      </div>
+      <div id="nav-content">
+        <a class="nav-button" href="home.html">
+          <i class="fas fa-home"></i><span>Home</span>
+        </a>
+        <a class="nav-button" href="dashboard.html">
+          <i class="fas fa-chart-line"></i><span>Dashboard</span>
+        </a>
+        <a class="nav-button">
+          <i class="fas fa-microchip"></i><span>Sensor Data</span>
+        </a>
+        <a class="nav-button">
+          <i class="fas fa-file-alt"></i><span>Reports</span>
+        </a>
+      </div>
+    </div>
+    <!--====== End of Side Bar ======-->
+    <!--====== Header ======-->
+    <header>
+      <nav>
+        <ul>
+          <ul class="test">
+            <li>
+              <a href="#" class="logo-text">Dashboard</a>
+            </li>
+          </ul>
+
+          <ul class="nav-date">
+            <li><a href="#about">24 April 2024</a></li>
+          </ul>
+
+          <ul class="account">
+            <li>
+              <i class="fas fa-sun icon-style" id="light-dark-toggle"></i
+              ><a href="/resouces.html"></a>
+            </li>
+            <li>
+              <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i
+              ><a href="#contact"></a>
+            </li>
+            <li>
+              <i class="fas fa-user icon-style" id="user-dropdown-toggle"></i
+              ><a href="#contact"></a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </header>
+    <!--====== End of Header ======-->
+    <!--====== Main ======-->
+    <div class="main">
+      <div class="temp-container">
+        <h3 class="card-heading">Pond Temperature</h3>
+        <p>Current: 20°C</p>
+        <p>Threshold: 15°C - 25°C</p>
+        <div class="gauge">$gauge</div>
+        <div class="linegraph">$linegraph</div>
+      </div>
+
+      <div class="middle">
+        <div class="center">
+          <div class="state">
+            <h2 class="card-heading">System State:</h2>
+            <span>🟢Running</span>
+            <button>Power Off</button>
+          </div>
+          <div class="uptime">
+            <h2 class="card-heading">Uptime:</h2>
+            <span>21 mins</span>
+          </div>
+        </div>
+
+        <div class="pondview">
+          <div class="left-side">
+            <img
+              class="project-image project-image1"
+              src="images/banner.jpg"
+              alt=""
+              width="192"
+              height="256"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="ph-container">
+        <h3 class="card-heading">Pond pH</h3>
+        <p>Current: 8</p>
+        <p>Threshold: 7 - 10</p>
+        <div class="gauge">$gauge</div>
+        <div class="linegraph">$linegraph</div>
+      </div>
+
+      
+      <div class="recommendations">
+        <h2 class="card-heading">Recommendations:</h2>
+        <p>recommendation 1</p>
+        <p>recommendation 2</p>
+        <p>recommendation 3</p>
+        <p>recommendation 4</p>
+      </div>
+    </div>
+    <!--====== End of Main ======-->
+  </body>
+</html>

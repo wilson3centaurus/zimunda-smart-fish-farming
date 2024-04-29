@@ -1,0 +1,68 @@
+.main {
+  border: 1px solid red;
+  font-family: Nova Round, "Open Sans", "Helvetica Neue";
+  margin-left: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 100%;
+  display: flex;  
+  flex-wrap: wrap;
+}
+.card-heading {
+  color: white;
+  font-size: 20px;
+}
+.temp-container,
+.ph-container,
+.state,
+.uptime {
+  border: 1px solid pink;
+  color: #2c3e50;
+  font-size: 15px;
+  line-height: 10px;
+  background-color: #111827;
+  width: 300px;
+  height: 350px;
+  padding-left: 5px;
+  justify-content: center;
+  border-radius: 7px;
+}
+.temp-container {
+}
+.state,
+.uptime {
+  padding: 10px;
+  width: 250px;
+  height: 70px;
+  text-align: center;
+  margin: 5px;
+}
+.state button {
+  border: none;
+  background-color: yellowgreen;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 5px;
+}
+.project-image {
+  width: 550px;
+  height: 250px; 
+  border-radius: 7px;
+  margin: 5px;
+}
+.middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.center {
+  display: flex;
+  justify-content: space-evenly;
+}
+.recommendations {
+  background-color: #111827;
+  flex: none;
+  width: 100%;
+  border-radius: 7px;
+}
