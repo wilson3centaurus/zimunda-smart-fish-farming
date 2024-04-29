@@ -20,7 +20,7 @@
   font-size: 15px;
   line-height: 10px;
   background-color: #111827;
-  width: 400px;
+  width: 380px;
   height: 350px;
   padding-left: 5px;
   justify-content: center;
@@ -36,6 +36,34 @@
 .state .card-heading,
 .uptime .card-heading {
   font-size: 20px;
+}
+.timeseries-graph {
+  width: 370px;
+  height: 265px;
+}
+.current-temp,
+.table-view {
+  margin: 5px;
+  border-radius: 10px;
+  width: 190px;
+}
+.test {
+  display: flex;
+  justify-content: baseline;
+  text-decoration: none;
+  list-style-type: none;
+  
+}
+.test a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.logo {
+  margin-right: 10px;
+}
+.table-view {
+  width: 420px;
 }
 .state,
 .uptime {
@@ -60,10 +88,11 @@
   margin-left: 5px;
 }
 .project-image {
-  width: 360px;
+  width: 380px;
   height: 230px;
   border-radius: 7px;
   margin: 5px;
+  margin-left: 0px;
 }
 .middle {
   display: flex;
@@ -76,7 +105,9 @@
 }
 .recommendations {
   background-color: #111827;
-  height: 100%;
+  width: 360px;
   border-radius: 7px;
   overflow-y: auto;
+  padding: 5px;
+  margin-top: 6px;
 }

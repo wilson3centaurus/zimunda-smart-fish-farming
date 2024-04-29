@@ -70,12 +70,11 @@
       <div class="temp-container">
         <h3 class="card-heading">Pond Temperature</h3>
         <p>Threshold Range: 18&deg;C - 20&deg;C</p>
-        <div class="timeseries-graph">
+        <div >
           <iframe
             src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&theme=dark&panelId=1"
-            width="392"
-            height="220"
             frameborder="0"
+            class="timeseries-graph"
           ></iframe>
         </div>
       </div>
@@ -93,40 +92,56 @@
           </div>
         </div>
 
-        <div class="pondview">
-          <div class="left-side">
-            <img
-              class="project-image project-image1"
-              src="images/banner.jpg"
-              alt=""
-              width="192"
-              height="256"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="ph-container">
-        <h3 class="card-heading">Pond pH</h3>
-        <p>Current: 8</p>
-        <p>Threshold: 7 - 10</p>
-        <div class="gauge">$gauge</div>
-      </div>
-
-      <iframe
+        <div class="current">
+          <iframe
             src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=2"
-            width="200"
-            height="110"
             frameborder="0"
             class="current-temp"
           ></iframe>
           <iframe
             src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=2"
-            width="200"
-            height="110"
             frameborder="0"
             class="current-temp"
           ></iframe>
+          <ul class="test">
+            <img class="logo" src="zimunda-icon.png" alt="" />
+            <li>
+              <a href="#" class="logo-text">Zimunda Estate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ph-container">
+        <h3 class="card-heading">Pond pH</h3>
+        <p>Threshold: 7 - 10</p>
+        <div class="timeseries-graph">
+          <iframe
+            src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&theme=dark&panelId=1"
+            class="timeseries-graph"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="pondview">
+        <div class="left-side">
+          <img
+            class="project-image project-image1"
+            src="images/banner.jpg"
+            alt=""
+            width="192"
+            height="256"
+          />
+        </div>
+      </div>
+      <iframe
+        src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=3"
+        width="350"
+        height="200"
+        frameborder="0"
+        class="table-view"
+      ></iframe>
       <div class="recommendations">
         <h2 class="card-heading">Recommendations:</h2>
         <p>recommendation 1</p>
