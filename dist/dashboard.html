@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/pondview.css" />
+    <link rel="stylesheet" href="styles/notifications.css" />
     <title>Dashboard</title>
   </head>
   <body>
@@ -60,7 +61,28 @@
 
           <ul class="account">
             <li>
-              <i class="fas fa-bell icon-style" id="light-dark-toggle"></i>
+              <i
+                class="fas fa-bell icon-style"
+                id="light-dark-toggle"
+                onclick="document.getElementById('id01').style.display='block'"
+              ></i>
+              <!-- The Modal -->
+              <div id="id01" class="modal">
+                <span
+                  onclick="document.getElementById('id01').style.display='none'"
+                  class="close"
+                  title="Close Modal"
+                  >&times;</span
+                >
+
+                <!-- Modal Content -->
+                <div class="notifications">
+                  <h3 class="fas fa-bell">Notifications:</h3>
+                  <p>Notifcation 1 <button>Clear</button></p>
+                  <p>Notifcation 2 <button>Clear</button></p>
+                  <p>Notifcation 3 <button>Clear</button></p>
+                </div>
+              </div>
             </li>
             <li>
               <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i>
@@ -73,8 +95,8 @@
       </nav>
       <hr class="top-line" />
     </header>
-    <!--====== End of Header ======-->
-    <!--====== Main ======-->
+    <!--========= End of Header =========-->
+    <!--========= Main =========-->
     <div class="main">
       <div class="temp-container">
         <h3 class="card-heading">Pond Temperature</h3>
@@ -114,7 +136,7 @@
           <div class="last-update">Last Updated: 2024-04-15 14:27:43</div>
           <ul class="test">
             <img class="logo" src="zimunda-icon.png" alt="" />
-            <li> 
+            <li>
               <a href="#" class="logo-text">Zimunda Estate</a>
             </li>
           </ul>
@@ -133,37 +155,25 @@
         </div>
       </div>
 
-      <!--
-      <div class="pondview">
-        <div class="left-side">
-          <img
-            class="project-image project-image1"
-            src="images/banner.jpg"
-            alt=""
-            width="192"
-            height="256"
-          />
-        </div>
-      </div>
-    -->
+      <!--========= Pond View Images =========-->
       <div class="slider">
         <div class="slide active">
           <img src="./image.jpg" alt="" />
         </div>
         <div class="slide">
           <img src="./images/banner.png" alt="" />
-          
         </div>
         <div class="slide">
           <img src="./images/banner.jpg" alt="" />
         </div>
         <div class="navigation">
-        <i class="fas fa-chevron-left prev-btn"></i>
-        <i class="fas fa-chevron-right next-btn"></i>
+          <i class="fas fa-chevron-left prev-btn"></i>
+          <i class="fas fa-chevron-right next-btn"></i>
+        </div>
       </div>
-    </div>
-  
+      <!--========= End of Pond View =========-->
 
+      <!--========= Table View =========-->
       <iframe
         src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=3"
         width="350"
@@ -171,6 +181,9 @@
         frameborder="0"
         class="table-view"
       ></iframe>
+      <!--========= End of Tbale View =========-->
+
+      <!--========= Recommendations =========-->
       <div class="recommendations">
         <h2 class="card-heading">Recommendations:</h2>
         <p>recommendation 1</p>
@@ -178,7 +191,10 @@
         <p>recommendation 3</p>
         <p>recommendation 4</p>
       </div>
+      <!--========= End of Recommendations =========-->
+
       <hr class="bottom-line" />
+
       <div class="footer-text-dash">
         <p>©️ 2024 Zimunda Estate. All rights reserved.</p>
       </div>
@@ -186,5 +202,6 @@
     <!--====== End of Main ======-->
 
     <script src="./scripts/pondview.js"></script>
+    <script src="./scripts/notifications.js"></script>
   </body>
 </html>

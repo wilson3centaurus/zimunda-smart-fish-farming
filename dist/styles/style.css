@@ -7,15 +7,18 @@
   --navbar-light-primary: #f5f6fa;
   --navbar-light-secondary: #8392a5;
 }
-html, body {
+html,
+body {
   margin: 0;
   background: var(--background);
+  transition: 0.9s;
 }
 
 #nav-toggle:checked ~ #nav-header {
   width: calc(var(--navbar-width-min) - 16px);
 }
-#nav-toggle:checked ~ #nav-content, #nav-toggle:checked ~ #nav-footer {
+#nav-toggle:checked ~ #nav-content,
+#nav-toggle:checked ~ #nav-footer {
   width: var(--navbar-width-min);
 }
 #nav-toggle:checked ~ #nav-header #nav-title {
@@ -23,14 +26,15 @@ html, body {
   pointer-events: none;
   transition: opacity 0.1s;
 }
-#nav-toggle:checked ~ #nav-header label[for=nav-toggle] {
+#nav-toggle:checked ~ #nav-header label[for="nav-toggle"] {
   left: calc(50% - 8px);
   transform: translate(-50%);
 }
 #nav-toggle:checked ~ #nav-header #nav-toggle-burger {
   background: var(--navbar-light-primary);
 }
-#nav-toggle:checked ~ #nav-header #nav-toggle-burger:before, #nav-toggle:checked ~ #nav-header #nav-toggle-burger::after {
+#nav-toggle:checked ~ #nav-header #nav-toggle-burger:before,
+#nav-toggle:checked ~ #nav-header #nav-toggle-burger::after {
   width: 16px;
   background: var(--navbar-light-secondary);
   transform: translate(0, 0) rotate(0deg);
@@ -47,12 +51,12 @@ html, body {
   left: 50%;
   transform: translate(-50%);
 }
-#nav-toggle:checked ~ #nav-footer #nav-footer-titlebox, #nav-toggle:checked ~ #nav-footer label[for=nav-footer-toggle] {
+#nav-toggle:checked ~ #nav-footer #nav-footer-titlebox,
+#nav-toggle:checked ~ #nav-footer label[for="nav-footer-toggle"] {
   opacity: 0;
   transition: opacity 0.1s;
   pointer-events: none;
 }
-
 
 #nav-bar {
   position: absolute;
@@ -80,7 +84,7 @@ html, body {
   color: inherit;
   text-decoration: inherit;
 }
-#nav-bar input[type=checkbox] {
+#nav-bar input[type="checkbox"] {
   display: none;
 }
 
@@ -110,7 +114,7 @@ html, body {
   transition: width 0.2s;
 }
 
-label[for=nav-toggle] {
+label[for="nav-toggle"] {
   position: absolute;
   right: 0;
   width: 3rem;
@@ -129,7 +133,8 @@ label[for=nav-toggle] {
   border-radius: 99px;
   transition: background 0.2s;
 }
-#nav-toggle-burger:before, #nav-toggle-burger:after {
+#nav-toggle-burger:before,
+#nav-toggle-burger:after {
   content: "";
   position: absolute;
   top: -6px;
@@ -163,7 +168,7 @@ label[for=nav-toggle] {
 }
 #nav-content::-webkit-scrollbar-thumb {
   border-radius: 99px;
-  background-color: #D62929;
+  background-color: #d62929;
 }
 
 #nav-content-highlight {
@@ -177,7 +182,8 @@ label[for=nav-toggle] {
   border-radius: 16px 0 0 16px;
   transition: top 0.2s;
 }
-#nav-content-highlight:before, #nav-content-highlight:after {
+#nav-content-highlight:before,
+#nav-content-highlight:after {
   content: "";
   position: absolute;
   right: 0;
@@ -213,8 +219,9 @@ label[for=nav-toggle] {
 
 .nav-button:hover {
   background-color: var(--navbar-dark-secondary);
-  margin: 5px;
+  margin: 1px;
   border-radius: 10px;
+  transition: 0.9s;
 }
 
 #nav-bar .fas {
