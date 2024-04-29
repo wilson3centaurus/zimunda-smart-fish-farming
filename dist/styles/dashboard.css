@@ -123,11 +123,14 @@
   margin: 0 auto;
   border: 0;
   height: 2px;
-  background-color: red;
+  background-color: white;
   width: 1000px;
   margin-top: 20px;
   margin-bottom: 100px;
 }
-.last-hope {
-  position: fixed;
+.footer-text-dash {
+  bottom: 0;
+  margin: 0 auto;
+  color: white;
+  margin-top: -90px;
 }
