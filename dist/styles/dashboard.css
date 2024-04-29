@@ -48,7 +48,6 @@
   justify-content: baseline;
   text-decoration: none;
   list-style-type: none;
-  
 }
 .test a {
   text-decoration: none;
@@ -74,6 +73,10 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
+}
+.last-update {
+  color: lightgreen;
+  margin-left: 70px;
 }
 .project-image {
   width: 380px;
