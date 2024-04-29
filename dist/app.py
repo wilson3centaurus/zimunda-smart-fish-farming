@@ -3,6 +3,7 @@ import pyrebase
 from datetime import datetime
 import requests
 import json
+from flask_cors import CORS
 
 # Firebase configuration
 config = {
@@ -20,6 +21,7 @@ firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
 app = Flask(__name__)
+CORS(app)
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -81,6 +83,7 @@ def index():
     send_to_grafana(grafana_data)
 
     return jsonify({"celsius": celsius, "data": data})
+
 
 def prepare_data_for_grafana(data):
     return [{"time": d["timestamp"], "value": d["celsius"]} for d in data]

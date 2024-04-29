@@ -69,15 +69,15 @@
     <div class="main">
       <div class="temp-container">
         <h3 class="card-heading">Pond Temperature</h3>
-        <p>Current: 20°C</p>
-        <p>Threshold: 15°C - 25°C</p>
-        <div class="gauge">$gauge</div>
-        <iframe
-          src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&theme=dark&panelId=1"
-          width="395"
-          height="200"
-          frameborder="0"
-        ></iframe>
+        <p>Threshold Range: 18&deg;C - 20&deg;C</p>
+        <div class="timeseries-graph">
+          <iframe
+            src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&theme=dark&panelId=1"
+            width="392"
+            height="220"
+            frameborder="0"
+          ></iframe>
+        </div>
       </div>
 
       <div class="middle">
@@ -111,14 +111,22 @@
         <p>Current: 8</p>
         <p>Threshold: 7 - 10</p>
         <div class="gauge">$gauge</div>
-        <iframe
-          src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=2"
-          width="200"
-          height="auto"
-          frameborder="0"
-        ></iframe>
       </div>
 
+      <iframe
+            src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=2"
+            width="200"
+            height="110"
+            frameborder="0"
+            class="current-temp"
+          ></iframe>
+          <iframe
+            src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=2"
+            width="200"
+            height="110"
+            frameborder="0"
+            class="current-temp"
+          ></iframe>
       <div class="recommendations">
         <h2 class="card-heading">Recommendations:</h2>
         <p>recommendation 1</p>

@@ -5,7 +5,7 @@
   margin-right: 10px;
   margin-bottom: 10px;
   height: 165px;
-  display: flex;  
+  display: flex;
   flex-wrap: wrap;
 }
 .card-heading {
@@ -16,7 +16,6 @@
 .ph-container,
 .state,
 .uptime {
-  border: 1px solid pink;
   color: #2c3e50;
   font-size: 15px;
   line-height: 10px;
@@ -26,6 +25,13 @@
   padding-left: 5px;
   justify-content: center;
   border-radius: 7px;
+}
+.temp-container,
+.ph-container {
+}
+.timeseries-graph {
+  flex: none;
+  margin: 2px;
 }
 .state .card-heading,
 .uptime .card-heading {
@@ -55,7 +61,7 @@
 }
 .project-image {
   width: 360px;
-  height: 230px; 
+  height: 230px;
   border-radius: 7px;
   margin: 5px;
 }
@@ -70,8 +76,6 @@
 }
 .recommendations {
   background-color: #111827;
-  flex: none;
-  width: 99%;
   height: 100%;
   border-radius: 7px;
   overflow-y: auto;
