@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles/dashboard.css" />
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/pondview.css" />
     <title>Dashboard</title>
   </head>
   <body>
@@ -59,21 +60,18 @@
 
           <ul class="account">
             <li>
-              <i class="fas fa-sun icon-style" id="light-dark-toggle"></i
-              >
+              <i class="fas fa-sun icon-style" id="light-dark-toggle"></i>
             </li>
             <li>
-              <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i
-              >
+              <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i>
             </li>
             <li>
-              <i class="fas fa-user icon-style" id="user-dropdown-toggle"></i
-              >
+              <i class="fas fa-user icon-style" id="user-dropdown-toggle"></i>
             </li>
           </ul>
         </ul>
       </nav>
-      <hr class="top-line">
+      <hr class="top-line" />
     </header>
     <!--====== End of Header ======-->
     <!--====== Main ======-->
@@ -135,6 +133,7 @@
         </div>
       </div>
 
+      <!--
       <div class="pondview">
         <div class="left-side">
           <img
@@ -146,6 +145,32 @@
           />
         </div>
       </div>
+    -->
+      <div class="slider">
+        <div class="slide active">
+          <img src="./image.jpg" alt="" />
+        </div>
+        <div class="slide">
+          <img src="./images/banner.png" alt="" />
+          
+        </div>
+        <div class="slide">
+          <img src="./images/banner.jpg" alt="" />
+        </div>
+        <div class="navigation">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+    </div>
+  </div>
+
       <iframe
         src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&panelId=3"
         width="350"
@@ -160,11 +185,13 @@
         <p>recommendation 3</p>
         <p>recommendation 4</p>
       </div>
-      <hr class="bottom-line">
+      <hr class="bottom-line" />
       <div class="footer-text-dash">
         <p>©️ 2024 Zimunda Estate. All rights reserved.</p>
       </div>
     </div>
     <!--====== End of Main ======-->
+
+    <script src="./scripts/pondview.js"></script>
   </body>
 </html>
