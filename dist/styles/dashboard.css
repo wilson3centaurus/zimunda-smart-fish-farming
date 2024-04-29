@@ -1,10 +1,9 @@
 .main {
-  border: 1px solid red;
   font-family: Nova Round, "Open Sans", "Helvetica Neue";
   margin-left: 100px;
   margin-right: 10px;
   margin-bottom: 10px;
-  height: 165px;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -110,4 +109,25 @@
   overflow-y: auto;
   padding: 5px;
   margin-top: 6px;
+}
+.top-line {
+  margin: 0 auto;
+  border: 0;
+  height: 2px;
+  background-color: white;
+  width: 550px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+.bottom-line {
+  margin: 0 auto;
+  border: 0;
+  height: 2px;
+  background-color: red;
+  width: 1000px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.last-hope {
+  position: fixed;
 }

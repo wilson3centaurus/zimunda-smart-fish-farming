@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/dashboard.css" />
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/style.css" />
@@ -50,19 +60,20 @@
           <ul class="account">
             <li>
               <i class="fas fa-sun icon-style" id="light-dark-toggle"></i
-              ><a href="/resouces.html"></a>
+              >
             </li>
             <li>
               <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i
-              ><a href="#contact"></a>
+              >
             </li>
             <li>
               <i class="fas fa-user icon-style" id="user-dropdown-toggle"></i
-              ><a href="#contact"></a>
+              >
             </li>
           </ul>
         </ul>
       </nav>
+      <hr class="top-line">
     </header>
     <!--====== End of Header ======-->
     <!--====== Main ======-->
@@ -70,7 +81,7 @@
       <div class="temp-container">
         <h3 class="card-heading">Pond Temperature</h3>
         <p>Threshold Range: 18&deg;C - 20&deg;C</p>
-        <div >
+        <div>
           <iframe
             src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&theme=dark&panelId=1"
             frameborder="0"
@@ -149,6 +160,8 @@
         <p>recommendation 3</p>
         <p>recommendation 4</p>
       </div>
+      <hr class="bottom-line">
+      <hr class="last-hope"></hr>
     </div>
     <!--====== End of Main ======-->
   </body>
