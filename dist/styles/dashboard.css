@@ -4,7 +4,7 @@
   margin-left: 100px;
   margin-right: 10px;
   margin-bottom: 10px;
-  height: 170px;
+  height: 165px;
   display: flex;  
   flex-wrap: wrap;
 }
@@ -55,7 +55,7 @@
 }
 .project-image {
   width: 360px;
-  height: 249px; 
+  height: 230px; 
   border-radius: 7px;
   margin: 5px;
 }
@@ -71,7 +71,7 @@
 .recommendations {
   background-color: #111827;
   flex: none;
-  width: 100%;
+  width: 99%;
   height: 100%;
   border-radius: 7px;
   overflow-y: auto;
