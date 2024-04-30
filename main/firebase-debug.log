@@ -1,0 +1,21 @@
+[debug] [2024-04-30T13:28:14.093Z] ----------------------------------------------------------------------
+[debug] [2024-04-30T13:28:14.095Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Leilani\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-04-30T13:28:14.096Z] CLI Version:   13.7.5
+[debug] [2024-04-30T13:28:14.096Z] Platform:      win32
+[debug] [2024-04-30T13:28:14.096Z] Node Version:  v20.11.1
+[debug] [2024-04-30T13:28:14.096Z] Time:          Tue Apr 30 2024 15:28:14 GMT+0200 (South Africa Standard Time)
+[debug] [2024-04-30T13:28:14.096Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-30T13:28:14.101Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-30T13:28:14.101Z] > authorizing via signed-in user (tafadzwawilsonsedze@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Leilani\Documents\zimunda-smart-fish-farming\main
+
