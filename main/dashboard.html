@@ -57,7 +57,7 @@
           </ul>
 
           <ul class="nav-date">
-            <li><a href="#about">24 April 2024</a></li>
+            <li><a href="#about" class="currentDate"></a></li>
           </ul>
 
           <ul class="account">
@@ -101,7 +101,7 @@
     <div class="main">
       <div class="temp-container">
         <h3 class="card-heading">Pond Temperature</h3>
-        <p>Threshold Range: 18&deg;C - 20&deg;C</p>
+        <p>Threshold: 18°C - 25°C</p>
         <div>
           <iframe
             src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&theme=dark&panelId=1"
@@ -146,7 +146,7 @@
 
       <div class="ph-container">
         <h3 class="card-heading">Pond pH</h3>
-        <p>Threshold: 7 - 10</p>
+        <p>Threshold: 6.5 - 9.0</p>
         <div class="timeseries-graph">
           <iframe
             src="http://localhost:3000/d-solo/adjkshybrrshsc/temperature-dashboard?orgId=1&from=1713184050000&to=1713202977000&theme=dark&panelId=1"
@@ -202,6 +202,7 @@
     </div>
     <!--====== End of Main ======-->
 
+    <script src="./scripts/script.js"></script>
     <script src="./scripts/pondview.js"></script>
     <script src="./scripts/notifications.js"></script>
   </body>
