@@ -92,3 +92,11 @@ p {
   display: flex;
   justify-content: center;
 }
+.custom-alert {
+  padding: 1em;
+  background-color: #1560bd;
+  color: #ffffff;
+  border-radius: 0.2em;
+  border-style: none;
+  cursor: pointer;
+}
