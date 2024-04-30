@@ -17,13 +17,54 @@
   display: flex;
   justify-content: center;
 }
+.sensor-header,
+p {
+  color: white;
+}
 .sensor1,
 .sensor2 {
-  background-color: hotpink;
+  background-color: #16202e;
   width: 200px;
   flex: 1;
   padding: 20px;
   margin: 5px;
+}
+.table-view {
+  width: 550px;
+  height: 460px;
+}
+.add-sensor {
+  margin: 0 auto;
+  text-decoration: none;
+  color: #556779;
+  background-color: #181b1f;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  width: 230px;
+  display: flex;
+  cursor: pointer;
+  transition: 0.8s;
+}
+.add-sensor:hover {
+  opacity: 0.6;
+  padding: 20px;
+}
+.container {
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: space-between; /* Space out children vertically */
+  min-height: 100vh; /* Make container at least as tall as the viewport */
+  padding-bottom: 50px; /* Space for the button at the bottom */
+  position: relative; /* For absolute positioning of the button */
+}
+
+.add-buteton {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
 }
 .top-line {
   margin: 0 auto;
