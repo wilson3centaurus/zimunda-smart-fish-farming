@@ -70,7 +70,6 @@ body {
   color: var(--navbar-light-primary);
   font-family: Nova Round, "Open Sans", "Helvetica Neue", sans-serif;
   overflow: hidden;
-  user-select: none;
 }
 #nav-bar hr {
   margin: 0;
