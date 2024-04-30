@@ -3,7 +3,7 @@ import pyrebase
 from datetime import datetime
 import requests
 import json
-from flask_cors import CORS
+# from flask_cors import CORS
 
 # Firebase configuration
 config = {
@@ -21,7 +21,7 @@ firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
