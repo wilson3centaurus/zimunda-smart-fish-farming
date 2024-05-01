@@ -9,8 +9,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut
 } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import Swal from "sweetalert2";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -23,13 +23,15 @@ const firebaseConfig = {
   appId: "1:1018586661772:web:b82e5142e2068e8aa90ca9",
 };
 
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
+// SignUp - Creating a new account
 const signupBtn = document.querySelector(".signUp");
-
 signupBtn.addEventListener("click", (e) => {
   let username = document.querySelector("#logname").value;
   let email = document.querySelector("#signemail").value;
@@ -45,23 +47,25 @@ signupBtn.addEventListener("click", (e) => {
         email: email,
       });
 
-      alert("User Created");
+      Swal.fire({
+        title: "Account Created Successfully!",
+        icon: "success",
+      });
       clearFields();
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorCode + " : " + " " + errorMessage);
+      Swal.fire({
+        title: "SignUp Failure",
+        text: errorMessage,
+        icon: "error",
+      });
     });
 });
 
-
-function runMe() {
-  Swal.fire("Hello world!");
-}
-
+// Login Function
 const loginBtn = document.querySelector(".login");
-
 loginBtn.addEventListener("click", (e) => {
   let email = document.querySelector("#logemail").value;
   let password = document.querySelector("#logpass").value;
@@ -80,16 +84,24 @@ loginBtn.addEventListener("click", (e) => {
         last_login: todayDate,
       });
 
-      Swal.fire("Hey user!", "You are the rockstar!", "info");
-      alert("Login Sucessful!");
-      
+      Swal.fire({
+        title: "Login Successful",
+        icon: "success",
+      });
+      setTimeout(() => {
+        window.location.href = "http://127.0.0.1:5501/main/home.html";
+      }, 5000);
       clearFields();
     })
     .catch((error) => {
       // Handle login errors
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorCode + " : " + " " + errorMessage);
+      Swal.fire({
+        title: "Login Failure",
+        text: errorMessage,
+        icon: "error",
+      });
     });
 });
 
@@ -98,3 +110,34 @@ function clearFields() {
   document.querySelector("#signemail").value = "";
   document.querySelector("#signpass").value = "";
 }
+
+//Logout
+const logout = document.querySelector('.logout');
+logout.addEventListener('click', () => {
+  const auth = getAuth();
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Are really really sure you want to logout!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, logout!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Logged Out!",
+            text: "You are now logged out.",
+            icon: "success",
+          });
+          window.location.href = "http://127.0.0.1:5501/main/userLogin.html";
+        }
+      });
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+})
