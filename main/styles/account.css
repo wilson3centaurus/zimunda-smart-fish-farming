@@ -1,0 +1,46 @@
+.user-dropdown-modal {
+  display: none;
+  font-family: Nova Round, "Open Sans", "Helvetica Neue";
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 60px;
+  z-index: 100;
+  justify-content: end;
+}
+.logout {
+  background-color: #111827;
+  color: #a4a2b6;
+  padding: 10px;
+  font-size: 19px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.9s;
+}
+.logout:hover {
+  opacity: 0.5;
+}
+.logout-container {
+  display: none;
+  background-color: #090e1a;
+  width: 100px;
+  height: 30px;
+  padding: 60px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: left;
+}
+.logout-container p {
+  color: white;
+  font-weight: bold;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 20px;
+}

@@ -6,6 +6,7 @@
 }
 body,
 .cd__main {
+  font-family: Nova Round, "Open Sans", "Helvetica Neue";
   font-weight: 300;
   font-size: 15px;
   line-height: 1.7;

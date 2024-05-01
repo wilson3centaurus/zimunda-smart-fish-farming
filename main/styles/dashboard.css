@@ -6,6 +6,7 @@
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
+  transition: 0.9;
 }
 .card-heading {
   color: white;

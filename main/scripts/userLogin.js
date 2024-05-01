@@ -9,7 +9,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
 } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
 // Firebase configuration
@@ -23,12 +23,17 @@ const firebaseConfig = {
   appId: "1:1018586661772:web:b82e5142e2068e8aa90ca9",
 };
 
-
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
+
+// Clear pass and email fields
+function clearFields() {
+  document.querySelector("#logname").value = "";
+  document.querySelector("#signemail").value = "";
+  document.querySelector("#signpass").value = "";
+}
 
 // SignUp - Creating a new account
 const signupBtn = document.querySelector(".signUp");
@@ -71,7 +76,7 @@ loginBtn.addEventListener("click", (e) => {
   let password = document.querySelector("#logpass").value;
   //let email = document.querySelector("#signemail").value;
   //let password = document.querySelector("#signpass").value;
-  
+
   //const auth = getAuth();
 
   signInWithEmailAndPassword(auth, email, password)
@@ -105,15 +110,10 @@ loginBtn.addEventListener("click", (e) => {
     });
 });
 
-function clearFields() {
-  document.querySelector("#logname").value = "";
-  document.querySelector("#signemail").value = "";
-  document.querySelector("#signpass").value = "";
-}
-
-//Logout
-const logout = document.querySelector('.logout');
-logout.addEventListener('click', () => {
+// Logout
+/*
+const logoutBtn = document.querySelector(".logout");
+logoutBtn.addEventListener("click", () => {
   const auth = getAuth();
   signOut(auth)
     .then(() => {
@@ -133,11 +133,16 @@ logout.addEventListener('click', () => {
             text: "You are now logged out.",
             icon: "success",
           });
-          window.location.href = "http://127.0.0.1:5501/main/userLogin.html";
+          setTimeout(() => {
+            window.location.href = "http://127.0.0.1:5501/main/userLogin.html";
+          }, 4000);
+          //window.location.href = "http://127.0.0.1:5501/main/userLogin.html";
         }
       });
     })
     .catch((error) => {
       // An error happened.
     });
-})
+});
+
+*/

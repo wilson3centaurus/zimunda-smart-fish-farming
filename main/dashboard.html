@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/pondview.css" />
     <link rel="stylesheet" href="styles/notifications.css" />
+    <link rel="stylesheet" href="styles/account.css" />
     <link rel="icon" href="zimunda-icon.png" type="icon" />
     <title>Dashboard</title>
   </head>
@@ -67,7 +68,7 @@
                 id="light-dark-toggle"
                 onclick="document.getElementById('id01').style.display='block'"
               ></i>
-              <!-- The Modal -->
+              <!-- The Notifications Modal -->
               <div id="id01" class="modal">
                 <span
                   onclick="document.getElementById('id01').style.display='none'"
@@ -79,9 +80,9 @@
                 <!-- Modal Content -->
                 <div class="notifications">
                   <h3 class="fas fa-bell">Notifications:</h3>
-                  <p>Notifcation 1 <button>Clear</button></p>
-                  <p>Notifcation 2 <button>Clear</button></p>
-                  <p>Notifcation 3 <button>Clear</button></p>
+                  <p>Notification 1 <button>Clear</button></p>
+                  <p>Notification 2 <button>Clear</button></p>
+                  <p>Notification 3 <button>Clear</button></p>
                 </div>
               </div>
             </li>
@@ -89,11 +90,18 @@
               <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i>
             </li>
             <li>
-              <i class="fas fa-user icon-style" id="user-dropdown-toggle"></i>
+              <i
+                class="fas fa-user icon-style"
+                id="user-dropdown-toggle"
+                onclick="document.querySelector('.user-dropdown-modal').style.display='flex'"
+              ></i>
             </li>
             <!-- User Dropdown Modal -->
             <div class="user-dropdown-modal">
-              <button id="logout">Logout</button>
+              <div class="logout-container">
+                <p>Account</p>
+                <button class="logout">Logout</button>
+              </div>
             </div>
           </ul>
         </ul>
@@ -206,8 +214,12 @@
     </div>
     <!--====== End of Main ======-->
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/pondview.js"></script>
     <script src="./scripts/notifications.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./scripts/userLogin.js"></script>
+    <script type="module" src="./scripts/logout.js"></script>
   </body>
 </html>
