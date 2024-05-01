@@ -1,14 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import {
-  getDatabase,
-  set,
-  ref,
-  update,
-} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 

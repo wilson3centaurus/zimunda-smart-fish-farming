@@ -52,7 +52,7 @@ p {
   padding: 20px;
 }
 .container {
-  display: flex; /* Use flexbox layout */
+  display: flex;
   flex-direction: column; /* Arrange children vertically */
   justify-content: space-between; /* Space out children vertically */
   min-height: 100vh; /* Make container at least as tall as the viewport */
