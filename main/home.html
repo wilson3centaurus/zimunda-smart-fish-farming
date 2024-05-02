@@ -16,6 +16,8 @@
     />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/notifications.css" />
+    <link rel="stylesheet" href="styles/account.css" />
     <link rel="icon" href="zimunda-icon.png" type="icon" />
   </head>
   <body>
@@ -69,8 +71,19 @@
               <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i>
             </li>
             <li>
-              <i class="fas fa-user icon-style" id="user-dropdown-toggle"></i>
+              <i
+                class="fas fa-user icon-style"
+                id="user-dropdown-toggle"
+                onclick="document.querySelector('.user-dropdown-modal').style.display='flex'"
+              ></i>
             </li>
+            <!-- User Dropdown Modal -->
+            <div class="user-dropdown-modal">
+              <div class="logout-container">
+                <p>Account</p>
+                <button class="logout">Logout</button>
+              </div>
+            </div>
           </ul>
         </ul>
       </nav>
@@ -86,6 +99,13 @@
         </p>
       </div>
       <div class="contents">
+        <div class="content-block coffeeDev">
+          <a class="social-links coffeeDev" href="" target="_blank">
+            Real Time Weather
+            <br />
+          </a>
+          $Real time weather intergration part.
+        </div>
         <div class="content-block" href="dashboard.html">
           <a class="social-links" href="dashboard.html" target="_blank">
             <img
@@ -98,19 +118,6 @@
             <br />
           </a>
           Manage Your Pond with Confidence.
-        </div>
-        <div class="content-block coffeeDev">
-          <a class="social-links coffeeDev" href="" target="_blank">
-            <img
-              class="socials coffeeDev"
-              src="images/coffee1.png"
-              alt="Gmail"
-              width="30px"
-              height="auto"
-            />Coffee Farming
-            <br />
-          </a>
-          Manage Your Coffee Farm for Success.
         </div>
         <div class="content-block">
           <a class="messages" href="" target="_blank">
@@ -130,6 +137,10 @@
 
     <script src="./scripts/script.js"></script>
     <script type="text/javascript" src="./scripts/userLogin.js"></script>
+    <script src="./scripts/notifications.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./scripts/userLogin.js"></script>
+    <script type="module" src="./scripts/logout.js"></script>
     <noscript>Please enable Javascript to view this page!</noscript>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

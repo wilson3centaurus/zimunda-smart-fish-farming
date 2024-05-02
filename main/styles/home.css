@@ -83,7 +83,7 @@ nav a {
   padding: 100px 0;
   color: #fff;
   width: 100%;
-  height: 90px;
+  height: 85px;
   cursor: auto;
 }
 .banner h1 {
@@ -128,6 +128,7 @@ nav a {
   align-content: center;
   margin-top: 10px;
   position: static;
+  
 }
 .content-block:hover {
   transform: scale(1.02);
