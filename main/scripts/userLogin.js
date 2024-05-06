@@ -110,39 +110,6 @@ loginBtn.addEventListener("click", (e) => {
     });
 });
 
-// Logout
-/*
-const logoutBtn = document.querySelector(".logout");
-logoutBtn.addEventListener("click", () => {
-  const auth = getAuth();
-  signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-      Swal.fire({
-        title: "Are you sure?",
-        text: "Are really really sure you want to logout!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, logout!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Logged Out!",
-            text: "You are now logged out.",
-            icon: "success",
-          });
-          setTimeout(() => {
-            window.location.href = "http://127.0.0.1:5501/main/userLogin.html";
-          }, 4000);
-          //window.location.href = "http://127.0.0.1:5501/main/userLogin.html";
-        }
-      });
-    })
-    .catch((error) => {
-      // An error happened.
-    });
-});
 
-*/
+
+

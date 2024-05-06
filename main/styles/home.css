@@ -3,8 +3,7 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   margin-top: 9px;
-}
-#nav-bar {
+  transition: 0.9s;
 }
 .logo {
   width: 50px;
@@ -13,6 +12,7 @@ nav {
   align-items: center;
   padding-left: 0 20px;
   margin-left: 100px;
+  transition: 0.9s;
 }
 
 nav ul {
@@ -21,6 +21,7 @@ nav ul {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  transition: 0.9s;
 }
 .test {
   margin-left: -80px;
@@ -44,6 +45,7 @@ nav a {
 .account {
   display: flex;
   justify-content: flex-end;
+  transition: 0.9s;
 }
 .logo-text {
   font-size: 25px;
@@ -65,15 +67,18 @@ nav a {
   margin-left: 100px;
   margin-right: 10px;
   margin-bottom: 10px;
+  width: 91%;
   height: 90%;
   cursor: pointer;
+  overflow: hidden;
+  transition: 0.9s;
 }
 .contents {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  transition: 0.9s;
 }
-
 .banner {
   background-image: url("../images/banner.png");
   background-size: cover;
@@ -101,15 +106,46 @@ nav a {
   margin-bottom: 10px;
 }
 
-.social-links,
-.messages,
-.notifications {
+.social-links {
   color: white;
   text-align: center;
   font-weight: 600;
   font-size: 19px;
   margin-bottom: 10px;
   text-decoration: none;
+}
+.new-msgs {
+  background-color: #111827;
+  width: 355px;
+  height: 160px;
+  padding: 1rem;
+  margin-top: 10px;
+  border: 1px solid rgba(39, 55, 94, 0.5);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+.messages,
+.home-notifications {
+  width: 97%;
+  height: 40%;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  padding-left: 10px;
+  background-color: #070c16;
+  color: white;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+.messages {
+  margin-bottom: 10px;
+}
+.home-notifications {
+  display: flexbox;
 }
 .content-block {
   background-color: #111827;
@@ -128,24 +164,25 @@ nav a {
   align-content: center;
   margin-top: 10px;
   position: static;
-  
 }
-.content-block:hover {
+.content-block:hover,
+.weather-container:hover,
+.new-msgs:hover {
   transform: scale(1.02);
 }
-.messages,
-.notifications {
+/*
+.messages {
   font-family: "Open Sans", "Helvetica Neue"; 
   padding: 20px;
   width: 310px;
   text-align: start;
   background-color: #070c16;
   border-radius: 5px;
-}
+}*/
 .span1,
 .span2 {
   text-align: end;
-  margin-left: 135px;
+  margin-left: 155px;
   background-color: red;
   color: black;
   padding: 1px;
@@ -153,18 +190,14 @@ nav a {
   padding-right: 10px;
   border-radius: 60%;
   font-size: 20px;
-  align-items: center;
 }
-
 .span2 {
-  margin-left: 106px;
+  margin-left: 130px;
 }
-
 .messages:hover,
-.notifications:hover {
+.home-notifications:hover {
   opacity: 0.6;
 }
-
 .footer-text {
   color: #8392a5;
   font-size: 14px;
@@ -177,4 +210,95 @@ nav a {
   margin-top: 0px;
   margin-bottom: -11px;
   text-align: center;
+}
+
+/* ======== Weather Modal ========= */
+.weather-modal {
+  display: none;
+  background-color: rgba(105, 188, 255, 0.459);
+  font-family: Nova Round, "Open Sans", "Helvetica Neue";
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 60px;
+  z-index: 100;
+  justify-content: end;
+  transition: 0.9s;
+}
+/* ===== Real time Weather ======= */
+.weather-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111827;
+  border-radius: 10px;
+  padding: 10px;
+  height: 174px;
+  width: 355px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.current-weather,
+.forecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+  color: darkslateblue;
+}
+.current-weather {
+  background-image: linear-gradient(to bottom right, #0055ff, #ffffff);
+  height: 90%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.forecast {
+  flex-direction: column;
+  height: 100%;
+}
+.temperature {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  text-decoration: none;
+}
+.temp {
+  font-size: 36px;
+  font-weight: bold;
+}
+.temp-icon {
+  font-size: 24px;
+  margin-left: 5px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 14px;
+}
+.day-temp {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #5177df, #ffffff);
+  border-radius: 7px;
+  width: 100%;
+  height: 55px;
+  font-weight: bold;
 }

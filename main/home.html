@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/notifications.css" />
     <link rel="stylesheet" href="styles/account.css" />
+    <link rel="stylesheet" href="styles/weather-modal.css" />
     <link rel="icon" href="zimunda-icon.png" type="icon" />
   </head>
   <body>
@@ -52,7 +53,7 @@
           <ul class="test">
             <img class="logo" src="zimunda-icon.png" alt="" />
             <li>
-              <a href="#" class="logo-text">Zimunda Estate</a>
+              <a href="#" class="fa fas-home logo-text">Zimunda Estate</a>
             </li>
           </ul>
 
@@ -68,7 +69,10 @@
               ></i>
             </li>
             <li>
-              <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i>
+              <i
+                class="fas fa-cog icon-style coffeeDev"
+                id="user-dropdown-toggle"
+              ></i>
             </li>
             <li>
               <i
@@ -98,16 +102,133 @@
           and resources.
         </p>
       </div>
+      <!-- ======== Weather Overview Modal-->
+      <div class="weather-modal">
+        <h1 class="weather-overview">
+          Real-time Weather Overview
+          <span class="fas fa-close close-modal" onclick="closeModal()">X</span>
+        </h1>
+        <div class="modal-container">
+          <div class="weather-input">
+            <h3>Enter a City Name</h3>
+            <input
+              class="city-input"
+              type="text"
+              placeholder="E.g., New York, London, Tokyo"
+            />
+            <button class="search-btn">Search</button>
+            <div class="separator"></div>
+            <button class="location-btn">Use Current Location</button>
+          </div>
+          <div class="weather-data">
+            <div class="current-weather">
+              <div class="details">
+                <h2>_______ ( ______ )</h2>
+                <h6>Temperature: __°C</h6>
+                <h6>Wind: __ M/S</h6>
+                <h6>Humidity: __%</h6>
+              </div>
+            </div>
+            <div class="days-forecast">
+              <h2>5-Day Forecast</h2>
+              <ul class="weather-cards">
+                <li class="card">
+                  <h3>( ______ )</h3>
+                  <h6>Temp: __C</h6>
+                  <h6>Wind: __ M/S</h6>
+                  <h6>Humidity: __%</h6>
+                </li>
+                <li class="card">
+                  <h3>( ______ )</h3>
+                  <h6>Temp: __C</h6>
+                  <h6>Wind: __ M/S</h6>
+                  <h6>Humidity: __%</h6>
+                </li>
+                <li class="card">
+                  <h3>( ______ )</h3>
+                  <h6>Temp: __C</h6>
+                  <h6>Wind: __ M/S</h6>
+                  <h6>Humidity: __%</h6>
+                </li>
+                <li class="card">
+                  <h3>( ______ )</h3>
+                  <h6>Temp: __C</h6>
+                  <h6>Wind: __ M/S</h6>
+                  <h6>Humidity: __%</h6>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="contents">
-        <div class="content-block coffeeDev">
-          <a class="social-links coffeeDev" href="" target="_blank">
-            Real Time Weather
-            <br />
+        <!-- ======== Real Weather Container-->
+        <div class="weather-container">
+          <a onclick="toggleWeatherContainer()">
+            <div class="weather-container">
+              <div class="current-weather">
+                <div class="temperature">
+                  <span class="temp"></span>
+                  <span class="temp-icon"></span>
+                </div>
+                <div class="details">
+                  <div class="humidity"></div>
+                  <div class="wind"></div>
+                  <div class="rain-probability"></div>
+                </div>
+              </div>
+              <div class="forecast">
+                <div class="day">
+                  <span class="day-name">SAT</span>
+                  <span class="day-temp"></span>
+                  <span class="day-icon"></span>
+                </div>
+                <div class="day">
+                  <span class="day-name">SUN</span>
+                  <span class="day-temp"></span>
+                  <span class="day-icon"></span>
+                </div>
+                <div class="day">
+                  <span class="day-name">MON</span>
+                  <span class="day-temp"></span>
+                  <span class="day-icon"></span>
+                </div>
+              </div>
+            </div>
           </a>
-          $Real time weather intergration part.
+          <div class="weather-container">
+            <div class="current-weather">
+              <div class="temperature">
+                <span class="temp"></span>
+                <span class="temp-icon"></span>
+              </div>
+              <div class="details">
+                <div class="humidity"></div>
+                <div class="wind"></div>
+                <div class="rain-probability"></div>
+              </div>
+            </div>
+            <div class="forecast">
+              <div class="day">
+                <span class="day-name">SAT</span>
+                <span class="day-temp"></span>
+                <span class="day-icon"></span>
+              </div>
+              <div class="day">
+                <span class="day-name">SUN</span>
+                <span class="day-temp"></span>
+                <span class="day-icon"></span>
+              </div>
+              <div class="day">
+                <span class="day-name">MON</span>
+                <span class="day-temp"></span>
+                <span class="day-icon"></span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="content-block" href="dashboard.html">
-          <a class="social-links" href="dashboard.html" target="_blank">
+          <a class="social-links" href="dashboard.html">
             <img
               class="socials"
               src="images/aquarium.png"
@@ -119,23 +240,23 @@
           </a>
           Manage Your Pond with Confidence.
         </div>
-        <div class="content-block">
-          <a class="messages" href="" target="_blank">
+        <div class="new-msgs">
+          <div class="messages" href="" target="_blank">
             New Messages <span class="span1">5</span>
-            <br />
-          </a>
-          <a class="notifications" href="" target="_blank">
+          </div>
+          <div class="home-notifications" href="" target="_blank">
             New Notifications <span class="span2">3</span>
-          </a>
+          </div>
+        </div>
+        <div class="footer-text">
+          <p>©️ 2024 Zimunda Estate. All rights reserved.</p>
         </div>
       </div>
-      <div class="footer-text">
-        <p>©️ 2024 Zimunda Estate. All rights reserved.</p>
-      </div>
+      <!--====== End of Home ======-->
     </div>
-    <!--====== End of Home ======-->
-
     <script src="./scripts/script.js"></script>
+    <!--<script src="./scripts/weatherHome.js"></script>-->
+    <script src="./scripts/weatherModal.js"></script>
     <script type="text/javascript" src="./scripts/userLogin.js"></script>
     <script src="./scripts/notifications.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -146,11 +267,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       $(".coffeeDev").click(function () {
-        Swal.fire("⚠️Section still in Development⚒️");
-      });
-      $(".coffeeDev").click(function () {
         Swal.fire("⚠️Feature still in Development⚒️");
       });
+      document.querySelector(".close-modal").addEventListener("click", () => {
+        document.querySelector(".weather-modal").style.display = "none";
+      });
+      function toggleWeatherContainer() {
+        const weatherContainer = document.querySelector(".weather-modal");
+        weatherContainer.style.display =
+          weatherContainer.style.display === "none" ? "block" : "none";
+      }
     </script>
   </body>
 </html>

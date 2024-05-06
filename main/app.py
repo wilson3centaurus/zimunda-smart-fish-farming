@@ -3,6 +3,7 @@ import pyrebase
 from datetime import datetime
 import requests
 import json
+import webbrowser
 # from flask_cors import CORS
 
 # Firebase configuration
@@ -90,3 +91,5 @@ def prepare_data_for_grafana(data):
 
 if __name__ == "__main__":
     app.run(debug=True)
+    webbrowser.open_new_tab("userLogin.html")
+    
