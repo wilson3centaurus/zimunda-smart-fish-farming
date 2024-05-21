@@ -23,7 +23,7 @@ p {
 }
 .sensor1,
 .sensor2 {
-  background-color: #16202e;
+  background-color: #181b1f;
   width: 200px;
   flex: 1;
   padding: 20px;
@@ -53,18 +53,11 @@ p {
 }
 .container {
   display: flex;
-  flex-direction: column; /* Arrange children vertically */
-  justify-content: space-between; /* Space out children vertically */
-  min-height: 100vh; /* Make container at least as tall as the viewport */
-  padding-bottom: 50px; /* Space for the button at the bottom */
-  position: relative; /* For absolute positioning of the button */
-}
-
-.add-buteton {
-  position: absolute;
-  bottom: 20px; /* Adjust as needed */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  position: relative; 
 }
 .top-line {
   margin: 0 auto;
@@ -99,4 +92,7 @@ p {
   border-radius: 0.2em;
   border-style: none;
   cursor: pointer;
+}
+.icon-style:hover {
+  cursor:no-drop;
 }

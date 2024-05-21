@@ -78,7 +78,7 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
 
 // Function to fetch coordinates based on city name
 const getCityCoordinates = () => {
-  const cityName = "London";
+  const cityName = "Mutare";
   const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
   // Get coordinates based on the default city name
@@ -90,7 +90,7 @@ const getCityCoordinates = () => {
       getWeatherDetails(name, lat, lon); // Get weather details based on coordinates
     })
     .catch(() => {
-      Swal.fire("Fetching.... PLeasee hold on!");
+      Swal.fire("Fetching Weather Data....<br> Please hold on!👽");
     });
 };
 
@@ -116,30 +116,10 @@ const getUserCoordinates = () => {
         });
     },
     (error) => {
-      // Show alert if user denied the location permission
-      if (error.code === error.PERMISSION_DENIED) {
-        alert(
-          "Geolocation request denied. Please reset location permission to grant access again."
-        );
-      } else {
-        alert("Geolocation request error. Please reset location permission.");
-      }
+      Swal.fire("Ooops, an error occured at you end bro🤕");
     }
   );
 };
-
-// Event listener for location button click
-//locationButton.addEventListener("click", getUserCoordinates);
-
-// Event listener for search button click
-//searchButton.addEventListener("click", getCityCoordinates);
-
-/* Event listener for Enter key press on city input field
-cityInput.addEventListener(
-  "keyup",
-  (e) => e.key === "Enter" && getCityCoordinates()
-);
-*/
 
 /* ================ Code for the Home Weather ====================*/
 
@@ -154,9 +134,6 @@ function fetchWeatherData() {
     .then((data) => {
       displayCurrentWeather(data.list[0]);
       displayForecast(data.list);
-    })
-    .catch((error) => {
-      console.error("Error fetching weather data:", error);
     });
 }
 

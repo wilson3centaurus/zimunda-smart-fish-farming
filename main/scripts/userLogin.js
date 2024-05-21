@@ -94,7 +94,7 @@ loginBtn.addEventListener("click", (e) => {
         icon: "success",
       });
       setTimeout(() => {
-        window.location.href = "http://127.0.0.1:5501/main/home.html";
+        window.location.href = "../main/home.html";
       }, 5000);
       clearFields();
     })

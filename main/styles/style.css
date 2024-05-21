@@ -1,9 +1,9 @@
 :root {
-  --background: #1f2937;
+  --background: #22272c;
   --navbar-width: 256px;
   --navbar-width-min: 80px;
-  --navbar-dark-primary: #111827;
-  --navbar-dark-secondary: #2c3e50;
+  --navbar-dark-primary: #181b1f;
+  --navbar-dark-secondary: #1f2a35;
   --navbar-light-primary: #f5f6fa;
   --navbar-light-secondary: #8392a5;
 }
@@ -160,6 +160,8 @@ label[for="nav-toggle"] {
   direction: rtl;
   overflow-x: hidden;
   transition: width 0.2s;
+  z-index: 1;
+  height: 100px;
 }
 #nav-content::-webkit-scrollbar {
   width: 8px;

@@ -4,7 +4,7 @@ import json
 
 cred = credentials.Certificate('xxxxx-adminsdk-xxxxx-xxxxxxx.json')
 default_app = firebase_admin.initialize_app(cred, {
-    databaseURL: "https://zimunda-smart-farm-project-default-rtdb.firebaseio.com",
+    databaseURL: "https://zimunda-smart-farm-project-default-rtdb.firebaseio.com", # type: ignore
 })
 
 db = firebase_admin.firestore.client()

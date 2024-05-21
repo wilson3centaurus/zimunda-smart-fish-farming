@@ -65,11 +65,11 @@
             <li>
               <i
                 class="fas fa-bell icon-style"
-                id="light-dark-toggle"
+                id="notification-icon"
                 onclick="document.getElementById('id01').style.display='block'"
               ></i>
               <!-- The Notifications Modal -->
-              <div id="id01" class="modal">
+              <div id="id01" class="modal notificationModal">
                 <span
                   onclick="document.getElementById('id01').style.display='none'"
                   class="close"
@@ -80,14 +80,16 @@
                 <!-- Modal Content -->
                 <div class="notifications">
                   <h3 class="fas fa-bell">Notifications:</h3>
-                  <p>Notification 1 <button>Clear</button></p>
-                  <p>Notification 2 <button>Clear</button></p>
-                  <p>Notification 3 <button>Clear</button></p>
+                  <div id="notification-messages"></div>
                 </div>
               </div>
             </li>
+
             <li>
-              <i class="fas fa-cog icon-style" id="user-dropdown-toggle"></i>
+              <i
+                class="fas fa-cog icon-style coffeeDev"
+                id="user-dropdown-toggle"
+              ></i>
             </li>
             <li>
               <i
@@ -127,11 +129,11 @@
         <div class="center">
           <div class="state">
             <h2 class="card-heading">System State:</h2>
-            <span>🟢Running</span>
+            <span id="systemState">checking...</span>
           </div>
           <div class="uptime">
             <h2 class="card-heading">Uptime:</h2>
-            <span>21 mins</span>
+            <span id="uptime">--/--/--</span>
           </div>
         </div>
 
@@ -146,7 +148,9 @@
             frameborder="0"
             class="current-temp"
           ></iframe>
-          <div class="last-update">Last Updated: 2024-04-15 14:27:43</div>
+          <div class="last-update">
+            Last Updated: <span id="lastUpdate">system is down...</span>
+          </div>
           <ul class="test">
             <img class="logo" src="zimunda-icon.png" alt="" />
             <li>
@@ -216,10 +220,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/systemState.js"></script>
+    <script src="./scripts/getData.js" defer></script>
     <script src="./scripts/pondview.js"></script>
     <script src="./scripts/notifications.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./scripts/userLogin.js"></script>
     <script type="module" src="./scripts/logout.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./scripts/sendPeriodicReport.js"></script>
+    <script>
+      $(".coffeeDev").click(function () {
+        Swal.fire("⚠️Feature still in Development⚒️");
+      });
+    </script>
   </body>
 </html>

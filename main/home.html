@@ -70,6 +70,29 @@
             </li>
             <li>
               <i
+                class="fas fa-bell icon-style"
+                id="notification-icon"
+                onclick="document.getElementById('id01').style.display='block'"
+              ></i>
+              <!-- The Notifications Modal -->
+              <div id="id01" class="modal notificationModal">
+                <span
+                  onclick="document.getElementById('id01').style.display='none'"
+                  class="close"
+                  title="Close Modal"
+                  >&times;</span
+                >
+
+                <!-- Modal Content -->
+                <div class="notifications">
+                  <h3 class="fas fa-bell">Notifications:</h3>
+                  <div id="notification-messages">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <i
                 class="fas fa-cog icon-style coffeeDev"
                 id="user-dropdown-toggle"
               ></i>
@@ -241,10 +264,10 @@
           Manage Your Pond with Confidence.
         </div>
         <div class="new-msgs">
-          <div class="messages" href="" target="_blank">
-            New Messages <span class="span1">5</span>
+          <div class="messages" href="" onclick="changeEmail()">
+            Message Preferences
           </div>
-          <div class="home-notifications" href="" target="_blank">
+          <div class="home-notifications" href="" onclick="document.getElementById('id01').style.display='block'">
             New Notifications <span class="span2">3</span>
           </div>
         </div>
@@ -256,10 +279,11 @@
     </div>
     <script src="./scripts/script.js"></script>
     <!--<script src="./scripts/weatherHome.js"></script>-->
+    <script src="./scripts/sendPeriodicReport.js"></script>
     <script src="./scripts/weatherModal.js"></script>
     <script type="text/javascript" src="./scripts/userLogin.js"></script>
+    <script src="./scripts/systemState.js"></script>
     <script src="./scripts/notifications.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./scripts/userLogin.js"></script>
     <script type="module" src="./scripts/logout.js"></script>
     <noscript>Please enable Javascript to view this page!</noscript>

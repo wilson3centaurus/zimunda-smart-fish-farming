@@ -1,83 +1,89 @@
-// JavaScript
-import {
-  getDatabase,
-  ref,
-  get,
-} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-
-// Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBpAI_F_qNfdqr8SmNXlmUIIzrfLGLBfxk",
-  authDomain: "zimunda-smart-farm-project.firebaseapp.com",
-  databaseURL: "https://zimunda-smart-farm-project-default-rtdb.firebaseio.com",
-  projectId: "zimunda-smart-farm-project",
-  storageBucket: "zimunda-smart-farm-project.appspot.com",
-  messagingSenderId: "1018586661772",
-  appId: "1:1018586661772:web:b82e5142e2068e8aa90ca9",
+  apiKey: "AIzaSyDnG1Kr_vUrdoVcE2SAbzEiG-tBPSe6-kw",
+  authDomain: "zimunda-sensor-data.firebaseapp.com",
+  databaseURL: "https://zimunda-sensor-data-default-rtdb.firebaseio.com",
+  projectId: "zimunda-sensor-data",
+  storageBucket: "zimunda-sensor-data.appspot.com",
+  messagingSenderId: "260289735455",
+  appId: "1:260289735455:web:c70d169bc8b86945cb1e2a",
+  measurementId: "G-WFH79MCPNP",
 };
 
-// Initialize Firebase app
-initializeApp(firebaseConfig);
+async function getDataFromFirebase() {
+  try {
+    const response = await fetch(
+      "https://zimunda-sensor-data-default-rtdb.firebaseio.com/temperature.json"
+    );
+    const temperatures = await response.json();
+    const data = [];
 
-// Get a reference to the database
-const database = getDatabase();
-
-function getDatabaseJSON(dataPath) {
-  return new Promise((resolve, reject) => {
-    get(ref(database, dataPath))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const data = snapshot.val();
-          resolve(data);
-        } else {
-          console.warn("No data found at the specified path:", dataPath);
-          resolve({}); // Resolve with an empty object if no data exists
+    if (temperatures) {
+      Object.keys(temperatures).forEach((key) => {
+        const value = temperatures[key];
+        if (value.timestamp) {
+          data.push({
+            timestamp: value.timestamp,
+            celsius: value.celsius,
+          });
         }
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        reject(error);
       });
-  });
+      data.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)); // Sort by earliest first
+      return data;
+    } else {
+      console.log("No temperature data available.");
+      return [];
+    }
+  } catch (error) {
+    console.error("Failed to fetch data from Firebase:", error);
+    throw error;
+  }
 }
 
-const getDataBtn = document.querySelector(".getData");
+async function displayData() {
+  try {
+    const data = await getDataFromFirebase();
+    if (data.length > 0) {
+      const latest = data[data.length - 1];
+      const first = data[0];
+      const latestTemp = latest.celsius;
+      const latestTimestamp = latest.timestamp;
+      const uptime =
+        (new Date(latestTimestamp) - new Date(first.timestamp)) / 1000; // uptime in seconds
+      const uptimeString = new Date(uptime * 1000).toISOString().substr(11, 8); // HH:MM:SS format
 
-getDataBtn.addEventListener("click", () => {
-  const dataPath = "/"; // Replace with the desired path in your database
+      const statusMessage = `
+        Latest Temperature: ${latestTemp}°C
+        Last Updated: ${latestTimestamp}
+        Total Uptime: ${uptimeString}
+      `;
 
-  getDatabaseJSON(dataPath)
-    .then((data) => {
-      const jsonData = JSON.stringify(data, null, 2); // Format JSON for readability
+      console.log(statusMessage);
 
-      const blob = new Blob([jsonData], { type: "text/json;charset=utf-8" });
-      const url = window.URL.createObjectURL(blob);
+      // Updating HTML
+      const lastUpdate = document.getElementById("lastUpdate");
+      const upTime = document.getElementById("uptime");
+      //const lastUpdate = document.getElementById("lastUpdate");
+        lastUpdate.innerText = `${latestTimestamp}`;
+        upTime.innerText = `${uptimeString}`;
+      
+    } else {
+      console.log("No data available.");
+      const myDiv = document.getElementById("myDiv");
+      if (myDiv) {
+        myDiv.innerText = "No data available.";
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching and displaying data:", error);
+    const myDiv = document.getElementById("myDiv");
+    if (myDiv) {
+      myDiv.innerText = "Error fetching data.";
+    }
+  }
+}
 
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "data.json";
-      link.style.display = "none";
-      document.body.appendChild(link);
-      link.click();
+// Display data initially
+displayData();
 
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    })
-    .catch((error) => {
-      console.error("Error downloading data:", error);
-      // Handle errors appropriately (e.g., display an error message)
-    });
-});
-
-/*
-getDataBtn.addEventListener("click", function () {
-  getDatabaseJSON("/")
-    .then((data) => {
-      console.log("Fetched data in JSON format:", data);
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-});
-*/
+// Set interval to show the system status every 5 seconds
+setInterval(displayData, 5000);

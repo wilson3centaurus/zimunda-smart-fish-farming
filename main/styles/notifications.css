@@ -3,7 +3,7 @@
   display: none;
   font-family: Nova Round, "Open Sans", "Helvetica Neue";
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -13,17 +13,20 @@
 }
 .notifications {
   margin-left: 69%;
-  border: 1px rgb(0, 0, 0) solid;
+  border-radius: 10px;
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  margin-right: 20px;
 }
 .notifications p {
-  color: #2c3e50;
+  color: #b6a5a5;
 }
 .notifications:hover {
-  background-color: #111827;
-  opacity: 1;
+  background-color: #16040e;
 }
 .notifications button {
-  background-color: #798aaf;
+  background-color: #753603;
   color: white;
   border: none;
   padding: 5px;
@@ -34,7 +37,7 @@
 /* The Close Button */
 .close {
   position: absolute;
-  right: 50px;
+  right: 20px;
   top: 0;
   color: #000;
   font-size: 55px;

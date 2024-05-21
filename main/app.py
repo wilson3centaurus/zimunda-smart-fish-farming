@@ -44,7 +44,7 @@ def send_to_grafana(data):
         print("Data sent to Grafana successfully!")
     else:
         print("Failed to send data to Grafana. Status code:", response.status_code)
-
+"""
 @app.route("/data")
 def get_data():
     temperatures = db.child("temperature").order_by_child("timestamp").get().val()
@@ -58,7 +58,24 @@ def get_data():
                 data.append({"timestamp": iso_time, "celsius": value["celsius"]})
         data.sort(key=lambda x: x["timestamp"], reverse=True)  # Sort by latest first
     return jsonify({"temperature": data})
-
+"""
+@app.route("/data")
+def get_data():
+    try:
+        temperatures = db.child("temperature").order_by_child("timestamp").get().val()
+    except requests.exceptions.HTTPError as e:
+        return jsonify({"error": str(e)}), 400
+    
+    data = []
+    if temperatures:
+        for key, value in temperatures.items():
+            if "timestamp" in value:
+                time_str = value["timestamp"]
+                time_obj = datetime.strptime(time_str, "%Y-%m-%d %H:%M:%S")  # Converting string to datetime object
+                iso_time = time_obj.strftime("%Y-%m-%d %H:%M:%S")  # Custom formatting without "T"
+                data.append({"timestamp": iso_time, "celsius": value["celsius"]})
+        data.sort(key=lambda x: x["timestamp"], reverse=True)  # Sort by latest first
+    return jsonify({"temperature": data})
 
 @app.route("/")
 def index():
@@ -91,5 +108,5 @@ def prepare_data_for_grafana(data):
 
 if __name__ == "__main__":
     app.run(debug=True)
-    webbrowser.open_new_tab("userLogin.html")
+    #webbrowser.open_new_tab("userLogin.html")
     

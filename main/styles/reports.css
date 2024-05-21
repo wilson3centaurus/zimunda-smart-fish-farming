@@ -1,11 +1,34 @@
-.generateReport {
+.generateReport,
+.getData {
   margin-top: 100px;
-  margin-bottom: 280px;
+  margin-bottom: 260px;
   font-size: 30px;
   width: auto;
-
 }
 
 .generateReport:hover {
-  border: 3px rgb(153, 0, 255) solid;
+  border: 3px #066a92 solid;
+  overflow: hidden;
+}
+.icon-style:hover {
+  cursor:no-drop;
+}
+
+#progress-bar {
+  width: 25%;
+  background-color: rgb(197, 196, 196);
+  display: flex;
+  margin: 0 auto;
+  margin-top: -240px;
+  margin-bottom: 230px;
+  height: 10px;
+  border-radius: 10px;
+  display: none;
+}
+
+#bar {
+  width: 3%;
+  height: 10px;
+  background-color: #3f5870;
+  border-radius: 10px;
 }

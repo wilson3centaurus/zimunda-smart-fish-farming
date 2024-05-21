@@ -1,0 +1,24 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "main": "getData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@emailjs/browser": "^4.3.3",
+    "axios": "^1.6.8",
+    "docx": "^8.5.0",
+    "dotenv": "^16.4.5",
+    "firebase": "^10.12.0",
+    "fs": "^0.0.1-security",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.13",
+    "openai": "^4.47.1",
+    "requirejs": "^2.3.6"
+  }
+}
